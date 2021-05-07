@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DB.EFRepository.Mapping
+namespace DB.Infrastructure.EFRepository.Mapping
 {
     public class CarsMapping : IEntityTypeConfiguration<Car>
     {
