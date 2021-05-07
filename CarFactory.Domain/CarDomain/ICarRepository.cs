@@ -1,10 +1,6 @@
-﻿using CarFactory.Domain.Model;
-using CF.Application.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace CarFactory.Domain
+namespace CarFactory.Domain.CarDomain
 {
     public interface ICarRepository
     {

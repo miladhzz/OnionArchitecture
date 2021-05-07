@@ -20,4 +20,8 @@
     <ProjectReference Include="..\CarFactory.Domain\CarFactory.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

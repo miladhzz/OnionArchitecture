@@ -1,4 +1,4 @@
-﻿namespace CarFactory.Domain.Model.Services
+﻿namespace CarFactory.Domain.CarDomain.Services
 {
     public interface ICarValidationService
     {

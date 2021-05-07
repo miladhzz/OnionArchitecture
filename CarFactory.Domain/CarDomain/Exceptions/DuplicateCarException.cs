@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace CarFactory.Domain.Model.Exceptions
+namespace CarFactory.Domain.CarDomain.Exceptions
 {
     public class DuplicateCarException : Exception
     {

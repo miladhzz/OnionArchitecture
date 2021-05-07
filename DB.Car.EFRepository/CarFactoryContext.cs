@@ -1,9 +1,6 @@
-﻿using CarFactory.Domain.Model;
+﻿using CarFactory.Domain.CarDomain;
 using DB.EFRepository.Mapping;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DB.EFRepository
 {

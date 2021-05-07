@@ -1,9 +1,7 @@
-﻿using CarFactory.Domain.Model.Services;
+﻿using CarFactory.Domain.CarDomain.Services;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace CarFactory.Domain.Model
+namespace CarFactory.Domain.CarDomain
 {
     public class Car
     {

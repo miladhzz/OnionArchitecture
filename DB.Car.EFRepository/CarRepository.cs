@@ -1,11 +1,6 @@
-﻿using CarFactory.Domain;
-using CarFactory.Domain.Model;
-using CF.Application.Contracts;
-using System;
+﻿using CarFactory.Domain.CarDomain;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Text;
 
 namespace DB.EFRepository
 {

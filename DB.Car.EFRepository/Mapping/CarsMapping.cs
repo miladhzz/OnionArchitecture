@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CarFactory.Domain.CarDomain;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using CarFactory.Domain.Model;
 
 namespace DB.EFRepository.Mapping
 {

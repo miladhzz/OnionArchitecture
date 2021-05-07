@@ -1,9 +1,6 @@
-﻿using CarFactory.Domain.Model.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CarFactory.Domain.CarDomain.Exceptions;
 
-namespace CarFactory.Domain.Model.Services
+namespace CarFactory.Domain.CarDomain.Services
 {
     public class CarValidationService : ICarValidationService
     {

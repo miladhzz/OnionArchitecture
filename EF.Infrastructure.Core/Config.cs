@@ -1,12 +1,9 @@
-﻿using CarFactory.Domain;
+﻿using CarFactory.Domain.CarDomain;
 using CF.Application;
 using CF.Application.Contracts;
 using DB.EFRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EF.Infrastructure.Core
 {

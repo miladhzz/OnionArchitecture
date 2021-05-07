@@ -1,11 +1,8 @@
-﻿using CarFactory.Domain;
-using CarFactory.Domain.Model;
-using CarFactory.Domain.Model.Services;
+﻿using CarFactory.Domain.CarDomain;
+using CarFactory.Domain.CarDomain.Services;
 using CF.Application.Contracts;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 
 namespace CF.Application
 {
