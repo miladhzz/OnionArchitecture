@@ -2,6 +2,7 @@
 using CF.Application;
 using CF.Application.Contracts;
 using DB.EFRepository;
+using DB.EFRepository.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 

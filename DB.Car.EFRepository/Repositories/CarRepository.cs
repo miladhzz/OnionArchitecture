@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DB.EFRepository
+namespace DB.EFRepository.Repositories
 {
     public class CarRepository : ICarRepository
     {
