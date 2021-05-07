@@ -2,6 +2,7 @@
 using CarFactory.Domain.CarTypeDomain;
 using CF.Application;
 using CF.Application.Contracts.Car;
+using CF.Application.Contracts.CarType;
 using DB.EFRepository;
 using DB.EFRepository.Repositories;
 using DB.Infrastructure.EFRepository.Repositories;
@@ -18,6 +19,7 @@ namespace EF.Infrastructure.Core
             services.AddTransient<ICarRepository, CarRepository>();
 
             services.AddTransient<ICarTypeRepository, CarTypeRepository>();
+            services.AddTransient<ICarTypeApplication, CarTypeApplication>();
 
             services.AddDbContext<CarFactoryContext>(options => options.UseSqlServer(connectionString));
 

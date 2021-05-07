@@ -6,9 +6,9 @@ namespace CF.Application.Contracts.CarType
 {
     public class CarTypeViewModel
     {
-        public int Id { get; private set; }
-        public string Name { get; private set; }
-        public bool IsDeleted { get; private set; }
-        public string CreateTime { get; private set; }
+        public int Id { get;  set; }
+        public string Name { get;  set; }
+        public bool IsDeleted { get;  set; }
+        public string CreateTime { get;  set; }
     }
 }

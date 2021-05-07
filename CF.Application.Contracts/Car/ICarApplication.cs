@@ -7,7 +7,7 @@ namespace CF.Application.Contracts.Car
         List<CarViewModel> List();
         void Create(CreateCar command);
         void Rename(RenameCar command);
-        RenameCar Get(int id);
+        CarViewModel Get(int id);
         void Remove(int id);
         void Activate(int id);
     }

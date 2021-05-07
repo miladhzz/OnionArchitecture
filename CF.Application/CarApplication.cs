@@ -3,6 +3,7 @@ using CarFactory.Domain.CarDomain.Services;
 using CF.Application.Contracts.Car;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace CF.Application
 {
@@ -30,33 +31,29 @@ namespace CF.Application
             _carRepository.Create(newCar);            
         }
 
-        public RenameCar Get(int id)
+        public CarViewModel Get(int id)
         {
             var car = _carRepository.Get(id);
-            return new RenameCar()
+            return new CarViewModel()
             {
                 Id = car.Id,
                 Model = car.Model,
+                Createtime = car.Createtime.ToString(CultureInfo.InvariantCulture),
+                IsDelete = car.IsDelete
             };
         }
 
         public List<CarViewModel> List()
         {
             var cars = _carRepository.GetAll();
-            var result = new List<CarViewModel>();
-
-            foreach (var car in cars)
-            {
-                result.Add(new CarViewModel()
-                {
-                    Id = car.Id,
-                    Createtime = car.Createtime.ToString(CultureInfo.InvariantCulture),
-                    IsDelete = car.IsDelete,
-                    Model = car.Model
-                });
-            }
-
-            return result;
+            return (from car in cars
+                    select new CarViewModel()
+                    {
+                        Id = car.Id,
+                        Createtime = car.Createtime.ToString(CultureInfo.InvariantCulture),
+                        IsDelete = car.IsDelete,
+                        Model = car.Model
+                    }).ToList();
         }
 
         public void Remove(int id)
