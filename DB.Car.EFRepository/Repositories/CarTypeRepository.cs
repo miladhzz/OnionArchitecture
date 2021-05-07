@@ -1,9 +1,8 @@
-﻿using CarFactory.Domain.CarDomain;
-using CarFactory.Domain.CarTypeDomain;
+﻿using CarFactory.Domain.CarTypeDomain;
 using DB.EFRepository;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace DB.Infrastructure.EFRepository.Repositories
 {
@@ -16,29 +15,30 @@ namespace DB.Infrastructure.EFRepository.Repositories
             _context = context;
         }
 
-        public void Create(Car entity)
+        public void Create(CarType entity)
         {
-            throw new NotImplementedException();
+            _context.Add(entity);
+            Save();
         }
 
         public bool Exist(string name)
         {
-            throw new NotImplementedException();
+            return _context.CarTypes.Any(x => x.Name == name);
         }
 
-        public Car Get(int id)
+        public CarType Get(int id)
         {
-            throw new NotImplementedException();
+            return _context.CarTypes.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<Car> GetAll()
+        public List<CarType> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.CarTypes.ToList();
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
     }
 }

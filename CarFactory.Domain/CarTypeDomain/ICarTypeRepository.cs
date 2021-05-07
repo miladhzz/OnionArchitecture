@@ -5,9 +5,9 @@ namespace CarFactory.Domain.CarTypeDomain
 {
     public interface ICarTypeRepository
     {
-        void Create(Car entity);
-        List<Car> GetAll();
-        Car Get(int id);
+        void Create(CarType entity);
+        List<CarType> GetAll();
+        CarType Get(int id);
         bool Exist(string name);
         void Save();
 
