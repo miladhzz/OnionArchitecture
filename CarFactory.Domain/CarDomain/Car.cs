@@ -1,4 +1,5 @@
 ﻿using CarFactory.Domain.CarDomain.Services;
+using CarFactory.Domain.CarTypeDomain;
 using System;
 
 namespace CarFactory.Domain.CarDomain
@@ -9,6 +10,8 @@ namespace CarFactory.Domain.CarDomain
         public string Model { get; private set; }
         public DateTime Createtime { get; private set; }
         public bool IsDelete { get; private set; }
+        public int CarTypeId { get; private set; }
+        public CarType CarType { get; private set; }
 
         public Car(string model, ICarValidationService icaarValidatorService)
         {

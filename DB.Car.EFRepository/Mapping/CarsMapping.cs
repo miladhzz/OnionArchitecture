@@ -15,7 +15,7 @@ namespace DB.EFRepository.Mapping
             builder.Property(x => x.IsDelete);
             builder.Property(x => x.Createtime);
 
-
+            builder.HasOne(x => x.CarType).WithMany(x => x.Cars).HasForeignKey(x => x.CarTypeId);
         }
     }
 }

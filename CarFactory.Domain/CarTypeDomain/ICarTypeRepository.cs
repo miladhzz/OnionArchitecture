@@ -9,6 +9,7 @@ namespace CarFactory.Domain.CarTypeDomain
         List<Car> GetAll();
         Car Get(int id);
         bool Exist(string name);
+        void Save();
 
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CarFactory.Domain.CarDomain;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace CarFactory.Domain.CarTypeDomain
 {
@@ -8,6 +11,7 @@ namespace CarFactory.Domain.CarTypeDomain
         public string Name { get; private set; }
         public bool IsDeleted { get; private set; }
         public DateTime CreateTime { get; private set; }
+        public ICollection<Car> Cars { get; set; }
 
         public CarType()
         {
@@ -18,6 +22,7 @@ namespace CarFactory.Domain.CarTypeDomain
             Name = name;
             IsDeleted = false;
             CreateTime = DateTime.Now;
+            Cars = new List<Car>();
         }
         public void Rename(string name)
         {
