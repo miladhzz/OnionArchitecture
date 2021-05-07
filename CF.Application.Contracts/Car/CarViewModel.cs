@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CF.Application.Contracts
+namespace CF.Application.Contracts.Car
 {
     public class CarViewModel
     {

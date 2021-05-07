@@ -1,6 +1,6 @@
 ﻿using CarFactory.Domain.CarDomain;
 using CarFactory.Domain.CarDomain.Services;
-using CF.Application.Contracts;
+using CF.Application.Contracts.Car;
 using System.Collections.Generic;
 using System.Globalization;
 
