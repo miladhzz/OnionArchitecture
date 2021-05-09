@@ -4,8 +4,8 @@ using CF.Application.Contracts.CarType;
 
 namespace Presentation.WebApiCore.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+    //[ApiController]
+    [Route("api/[controller]")]
     public class CarTypeController : Controller
     {
         private readonly ICarTypeApplication _carTypeApp;
@@ -16,6 +16,7 @@ namespace Presentation.WebApiCore.Controllers
         }
 
         [HttpGet]
+        
         public IEnumerable<CarTypeViewModel> Get()
         {
             return _carTypeApp.GetAll();

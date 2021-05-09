@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "cartype",
+      "launchUrl": "api/cartype",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "Presentation.WebApiCore": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "cartype",
+      "launchUrl": "api/cartype",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
