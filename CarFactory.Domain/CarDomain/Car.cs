@@ -9,7 +9,7 @@ namespace CarFactory.Domain.CarDomain
         public int Id { get; private set; }
         public string Model { get; private set; }
         public DateTime CreateTime { get; private set; }
-        public bool IsDelete { get; private set; }
+        public bool IsDeleted { get; private set; }
         public int CarTypeId { get; private set; }
         public CarType CarType { get; private set; }
 
@@ -19,7 +19,7 @@ namespace CarFactory.Domain.CarDomain
             icaarValidatorService.CheckCarModelIsExist(model);
 
             Model = model;
-            IsDelete = false;
+            IsDeleted = false;
             CreateTime = DateTime.Now;
         }
 
@@ -32,12 +32,12 @@ namespace CarFactory.Domain.CarDomain
 
         public void Remove()
         {
-            IsDelete = true;
+            IsDeleted = true;
         }
 
         public void Activate()
         {
-            IsDelete = false;
+            IsDeleted = false;
         }
         private void CheckModelIsEmpty(string model)
         {

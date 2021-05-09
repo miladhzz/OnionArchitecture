@@ -39,7 +39,7 @@ namespace CF.Application
                 Id = car.Id,
                 Model = car.Model,
                 CreateTime = car.CreateTime.ToString(CultureInfo.InvariantCulture),
-                IsDelete = car.IsDelete
+                IsDelete = car.IsDeleted
             };
         }
 
@@ -51,7 +51,7 @@ namespace CF.Application
                     {
                         Id = car.Id,
                         CreateTime = car.CreateTime.ToString(CultureInfo.InvariantCulture),
-                        IsDelete = car.IsDelete,
+                        IsDelete = car.IsDeleted,
                         Model = car.Model
                     }).ToList();
         }
