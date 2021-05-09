@@ -13,10 +13,15 @@ namespace CarFactory.Domain.CarDomain
         public int CarTypeId { get; private set; }
         public CarType CarType { get; private set; }
 
-        public Car(string model, ICarValidationService icaarValidatorService)
+        public Car()
+        {
+
+        }
+
+        public Car(string model, ICarValidationService carValidatorService)
         {
             CheckModelIsEmpty(model);
-            icaarValidatorService.CheckCarModelIsExist(model);
+            carValidatorService.CheckCarModelIsExist(model);
 
             Model = model;
             IsDeleted = false;
