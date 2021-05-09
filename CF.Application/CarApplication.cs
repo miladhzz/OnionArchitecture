@@ -38,7 +38,7 @@ namespace CF.Application
             {
                 Id = car.Id,
                 Model = car.Model,
-                Createtime = car.Createtime.ToString(CultureInfo.InvariantCulture),
+                CreateTime = car.CreateTime.ToString(CultureInfo.InvariantCulture),
                 IsDelete = car.IsDelete
             };
         }
@@ -50,7 +50,7 @@ namespace CF.Application
                     select new CarViewModel()
                     {
                         Id = car.Id,
-                        Createtime = car.Createtime.ToString(CultureInfo.InvariantCulture),
+                        CreateTime = car.CreateTime.ToString(CultureInfo.InvariantCulture),
                         IsDelete = car.IsDelete,
                         Model = car.Model
                     }).ToList();

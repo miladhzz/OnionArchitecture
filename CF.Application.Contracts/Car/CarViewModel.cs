@@ -8,7 +8,7 @@ namespace CF.Application.Contracts.Car
     {
         public int Id { get; set; }
         public string Model { get; set; }
-        public string Createtime { get;  set; }
+        public string CreateTime { get;  set; }
         public bool IsDelete { get;  set; }
     }
 }

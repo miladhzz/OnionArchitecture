@@ -1,8 +1,9 @@
-﻿using CarFactory.Domain.CarDomain;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using CarFactory.Domain.CarDomain;
+using DB.EFRepository;
 
-namespace DB.EFRepository.Repositories
+namespace DB.Infrastructure.EFRepository.Repositories
 {
     public class CarRepository : ICarRepository
     {

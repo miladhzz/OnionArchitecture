@@ -8,7 +8,7 @@ namespace CarFactory.Domain.CarDomain
     {
         public int Id { get; private set; }
         public string Model { get; private set; }
-        public DateTime Createtime { get; private set; }
+        public DateTime CreateTime { get; private set; }
         public bool IsDelete { get; private set; }
         public int CarTypeId { get; private set; }
         public CarType CarType { get; private set; }
@@ -20,7 +20,7 @@ namespace CarFactory.Domain.CarDomain
 
             Model = model;
             IsDelete = false;
-            Createtime = DateTime.Now;
+            CreateTime = DateTime.Now;
         }
 
         public void Rename(string model)

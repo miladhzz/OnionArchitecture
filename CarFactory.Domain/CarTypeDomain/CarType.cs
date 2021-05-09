@@ -1,6 +1,5 @@
 ﻿using CarFactory.Domain.CarDomain;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace CarFactory.Domain.CarTypeDomain

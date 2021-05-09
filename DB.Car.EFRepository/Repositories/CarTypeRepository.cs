@@ -8,7 +8,7 @@ namespace DB.Infrastructure.EFRepository.Repositories
 {
     public class CarTypeRepository : ICarTypeRepository
     {
-        public readonly CarFactoryContext _context;
+        private readonly CarFactoryContext _context;
 
         public CarTypeRepository(CarFactoryContext context)
         {
