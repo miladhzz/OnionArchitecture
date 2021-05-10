@@ -21,5 +21,10 @@ namespace Presentation.WebApiCore.Controllers
             return _carTypeApp.GetAll();
         }
 
+        [HttpPost]
+        public void Add([FromBody] CarTypeCreate carType)
+        {
+            _carTypeApp.Create(carType);
+        }
     }
 }
