@@ -4,8 +4,6 @@ using CF.Application.Contracts.CarType;
 
 namespace Presentation.WebApiCore.Controllers
 {
-    //[ApiController]
-    //[Route("api/[controller]")]
     public class CarTypeController : Controller
     {
         private readonly ICarTypeApplication _carTypeApp;
@@ -25,6 +23,12 @@ namespace Presentation.WebApiCore.Controllers
         public void Add([FromBody] CarTypeCreate carType)
         {
             _carTypeApp.Create(carType);
+        }
+
+        [HttpPost]
+        public void Update([FromBody] CarTypeRename carType)
+        {
+            _carTypeApp.Rename(carType);
         }
     }
 }
