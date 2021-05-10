@@ -19,6 +19,17 @@ namespace Presentation.WebApiCore.Controllers
             return _carTypeApp.GetAll();
         }
 
+        [HttpGet]
+        public ActionResult<CarTypeViewModel> Get([FromQuery] int id)
+        {
+            var result =  _carTypeApp.Get(id);
+
+            if (result is null)
+                return NotFound();
+
+            return result;
+        }
+
         [HttpPost]
         public void Add([FromBody] CarTypeCreate carType)
         {
@@ -30,5 +41,18 @@ namespace Presentation.WebApiCore.Controllers
         {
             _carTypeApp.Rename(carType);
         }
+
+        [HttpPost]
+        public void Remove([FromQuery] int id)
+        {
+            _carTypeApp.Remove(id);
+        }
+
+        [HttpPost]
+        public void Activate([FromQuery] int id)
+        {
+            _carTypeApp.Activate(id);
+        }
+
     }
 }

@@ -33,7 +33,7 @@ namespace CarFactory.Domain.CarTypeDomain
         }
         public void Activate()
         {
-            IsDeleted = true;
+            IsDeleted = false;
         }
     }
 }

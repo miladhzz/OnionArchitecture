@@ -33,6 +33,10 @@ namespace CF.Application
         public CarTypeViewModel Get(int id)
         {
             var carType = _carTypeRepository.Get(id);
+
+            if (carType is null)
+                return null;
+
             return new CarTypeViewModel()
             {
                 Id = carType.Id,

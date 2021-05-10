@@ -33,7 +33,7 @@ namespace DB.Infrastructure.EFRepository.Repositories
 
         public List<CarType> GetAll()
         {
-            return _context.CarTypes.ToList();
+            return _context.CarTypes.Where(x => !x.IsDeleted).ToList();
         }
 
         public void Save()
