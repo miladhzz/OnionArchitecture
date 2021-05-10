@@ -4,7 +4,7 @@ namespace CF.Application.Contracts.Car
 {
     public interface ICarApplication
     {
-        List<CarViewModel> List();
+        List<CarViewModel> GetAll();
         void Create(CreateCar command);
         void Rename(RenameCar command);
         CarViewModel Get(int id);

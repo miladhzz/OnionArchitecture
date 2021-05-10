@@ -10,5 +10,6 @@ namespace CF.Application.Contracts.Car
         public string Model { get; set; }
         public string CreateTime { get;  set; }
         public bool IsDelete { get;  set; }
+        public string CarType { get; set; }
     }
 }

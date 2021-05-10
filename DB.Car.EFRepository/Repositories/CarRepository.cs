@@ -2,6 +2,7 @@
 using System.Linq;
 using CarFactory.Domain.CarDomain;
 using DB.EFRepository;
+using Microsoft.EntityFrameworkCore;
 
 namespace DB.Infrastructure.EFRepository.Repositories
 {
@@ -37,7 +38,7 @@ namespace DB.Infrastructure.EFRepository.Repositories
 
         List<Car> ICarRepository.GetAll()
         {
-            return _context.Cars.ToList();
+            return _context.Cars.Include(x => x.CarType).Where(x => !x.IsDeleted).ToList();
         }
     }
 }

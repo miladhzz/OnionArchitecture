@@ -8,7 +8,7 @@ namespace DB.Infrastructure.EFRepository.Mapping
     {
         public void Configure(EntityTypeBuilder<Car> builder)
         {
-            builder.ToTable("Car");
+            builder.ToTable("Cars");
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Model);

@@ -27,7 +27,7 @@ namespace CF.Application
 
         public void Create(CreateCar command)
         {
-            var newCar = new Car(command.Model, _carValidationService);
+            var newCar = new Car(command.Model, command.CarTypeId, _carValidationService);
             _carRepository.Create(newCar);            
         }
 
@@ -39,11 +39,12 @@ namespace CF.Application
                 Id = car.Id,
                 Model = car.Model,
                 CreateTime = car.CreateTime.ToString(CultureInfo.InvariantCulture),
-                IsDelete = car.IsDeleted
+                IsDelete = car.IsDeleted,
+                CarType = car.CarType.Name
             };
         }
 
-        public List<CarViewModel> List()
+        public List<CarViewModel> GetAll()
         {
             var cars = _carRepository.GetAll();
             return (from car in cars
@@ -52,14 +53,15 @@ namespace CF.Application
                         Id = car.Id,
                         CreateTime = car.CreateTime.ToString(CultureInfo.InvariantCulture),
                         IsDelete = car.IsDeleted,
-                        Model = car.Model
+                        Model = car.Model,
+                        CarType = car.CarType.Name
                     }).ToList();
         }
 
         public void Remove(int id)
         {
             var car = _carRepository.Get(id);
-            car.Activate();
+            car.Remove();
             _carRepository.Save();
         }
 
