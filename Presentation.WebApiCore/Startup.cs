@@ -36,7 +36,9 @@ namespace Presentation.WebApiCore
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(name: "api",
+                    pattern: "api/{controller}/{action}"
+                    );
             });
         }
     }
