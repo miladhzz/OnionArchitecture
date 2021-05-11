@@ -21,7 +21,7 @@ namespace CF.Application
         public void Activate(int id)
         {
             var car = _carRepository.Get(id);
-            car.Remove();
+            car.Activate();
             _carRepository.Save();
         }
 

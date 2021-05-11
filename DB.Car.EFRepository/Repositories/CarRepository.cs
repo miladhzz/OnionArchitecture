@@ -28,7 +28,7 @@ namespace DB.Infrastructure.EFRepository.Repositories
 
         public Car Get(int id)
         {
-            return _context.Cars.FirstOrDefault(x => x.Id == id);
+            return _context.Cars.Include(x => x.CarType).FirstOrDefault(x => x.Id == id);
         }
 
         public void Save()

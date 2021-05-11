@@ -1,11 +1,6 @@
 ﻿using CF.Application.Contracts.Car;
-using CF.Application.Contracts.CarType;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Presentation.WebApiCore.Controllers
 {
@@ -24,6 +19,12 @@ namespace Presentation.WebApiCore.Controllers
             return _carApplication.GetAll();
         }
 
+        [HttpGet]
+        public CarViewModel Get([FromQuery] int id)
+        {
+            return _carApplication.Get(id);
+        }
+
         [HttpPost]
         public void Add([FromBody] CreateCar createCar)
         {
@@ -34,6 +35,18 @@ namespace Presentation.WebApiCore.Controllers
         public void Remove([FromQuery] int id)
         {
             _carApplication.Remove(id);
+        }
+
+        [HttpPost]
+        public void Activate([FromQuery] int id)
+        {
+            _carApplication.Activate(id);
+        }
+
+        [HttpPost]
+        public void Rename([FromBody] RenameCar car)
+        {
+            _carApplication.Rename(car);
         }
     }
 }
