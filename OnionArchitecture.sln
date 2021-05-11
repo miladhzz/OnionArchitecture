@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DB.Infrastructure.EFReposit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Infrastructure.Core", "EF.Infrastructure.Core\EF.Infrastructure.Core.csproj", "{B2129A40-CA4C-464A-8841-E92506F6DA80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.WebApiCore", "Presentation.WebApiCore\Presentation.WebApiCore.csproj", "{BA6C8878-9517-4876-BE93-7ED4CA0F2267}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation.WebApiCore", "Presentation.WebApiCore\Presentation.WebApiCore.csproj", "{BA6C8878-9517-4876-BE93-7ED4CA0F2267}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarFactory.Generics", "CarFactory.Generics\CarFactory.Generics.csproj", "{5C558DDB-8F65-4600-8C09-405E545B8EE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{BA6C8878-9517-4876-BE93-7ED4CA0F2267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA6C8878-9517-4876-BE93-7ED4CA0F2267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA6C8878-9517-4876-BE93-7ED4CA0F2267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C558DDB-8F65-4600-8C09-405E545B8EE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C558DDB-8F65-4600-8C09-405E545B8EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C558DDB-8F65-4600-8C09-405E545B8EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C558DDB-8F65-4600-8C09-405E545B8EE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
