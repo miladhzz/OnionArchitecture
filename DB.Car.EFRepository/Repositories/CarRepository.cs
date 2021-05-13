@@ -17,7 +17,7 @@ namespace DB.Infrastructure.EFRepository.Repositories
 
         public void Create(Car entity)
         {
-            _context.Add(entity);
+            _context.Cars.Add(entity);
             Save();
         }
 

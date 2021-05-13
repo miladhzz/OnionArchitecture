@@ -1,6 +1,4 @@
-﻿using CarFactory.Domain.CarDomain;
-using CarFactory.Generics.Infrastructure;
-using System.Collections.Generic;
+﻿using CarFactory.Generics.Infrastructure;
 
 namespace CarFactory.Domain.CarTypeDomain
 {
