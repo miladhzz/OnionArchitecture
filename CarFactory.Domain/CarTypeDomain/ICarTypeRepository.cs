@@ -1,15 +1,11 @@
 ﻿using CarFactory.Domain.CarDomain;
+using CarFactory.Generics.Infrastructure;
 using System.Collections.Generic;
 
 namespace CarFactory.Domain.CarTypeDomain
 {
-    public interface ICarTypeRepository
+    public interface ICarTypeRepository : IRepository<int, CarType>
     {
-        void Create(CarType entity);
-        List<CarType> GetAll();
-        CarType Get(int id);
-        bool Exist(string name);
-        void Save();
 
     }
 }

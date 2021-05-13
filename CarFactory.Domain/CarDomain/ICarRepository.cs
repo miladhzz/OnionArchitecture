@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using CarFactory.Generics.Infrastructure;
+using System.Collections.Generic;
 
 namespace CarFactory.Domain.CarDomain
 {
-    public interface ICarRepository
+    public interface ICarRepository : IRepository<int , Car>
     {
-        void Create(Car entity);
-        List<Car> GetAll();
-        Car Get(int id);
-        void Save();
-        bool Exist(string model);
+        
     }
 }

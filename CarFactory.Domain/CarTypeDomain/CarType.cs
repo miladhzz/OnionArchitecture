@@ -1,16 +1,15 @@
 ﻿using CarFactory.Domain.CarDomain;
+using CarFactory.Generics;
 using System;
 using System.Collections.Generic;
 
 namespace CarFactory.Domain.CarTypeDomain
 {
-    public class CarType
+    public class CarType : DomainBase<int>
     {
-        public int Id { get; private set; }
         public string Name { get; private set; }
-        public bool IsDeleted { get; private set; }
-        public DateTime CreateTime { get; private set; }
         public ICollection<Car> Cars { get; set; }
+        public bool IsDeleted { get; private set; }
 
         public CarType()
         {
@@ -20,7 +19,6 @@ namespace CarFactory.Domain.CarTypeDomain
         {
             Name = name;
             IsDeleted = false;
-            CreateTime = DateTime.Now;
             Cars = new List<Car>();
         }
         public void Rename(string name)

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CarFactory.Generics\CarFactory.Generics.csproj" />
     <ProjectReference Include="..\CF.Application.Contracts\CF.Application.Contracts.csproj" />
   </ItemGroup>
 

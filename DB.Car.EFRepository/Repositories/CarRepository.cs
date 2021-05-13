@@ -31,14 +31,15 @@ namespace DB.Infrastructure.EFRepository.Repositories
             return _context.Cars.Include(x => x.CarType).FirstOrDefault(x => x.Id == id);
         }
 
+        public List<Car> GetAll()
+        {
+            return _context.Cars.Include(x => x.CarType).Where(x => !x.IsDeleted).ToList();
+        }
+
         public void Save()
         {
             _context.SaveChanges();
         }
 
-        List<Car> ICarRepository.GetAll()
-        {
-            return _context.Cars.Include(x => x.CarType).Where(x => !x.IsDeleted).ToList();
-        }
     }
 }

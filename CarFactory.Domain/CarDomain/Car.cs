@@ -1,17 +1,16 @@
 ﻿using CarFactory.Domain.CarDomain.Services;
 using CarFactory.Domain.CarTypeDomain;
+using CarFactory.Generics;
 using System;
 
 namespace CarFactory.Domain.CarDomain
 {
-    public class Car
+    public class Car : DomainBase<int>
     {
-        public int Id { get; private set; }
         public string Model { get; private set; }
-        public DateTime CreateTime { get; private set; }
-        public bool IsDeleted { get; private set; }
         public int CarTypeId { get; private set; }
         public CarType CarType { get; private set; }
+        public bool IsDeleted { get; private set; }
 
         public Car()
         {
@@ -26,7 +25,6 @@ namespace CarFactory.Domain.CarDomain
             Model = model;
             CarTypeId = carTypeId;
             IsDeleted = false;
-            CreateTime = DateTime.Now;
         }
 
         public void Rename(string model)
