@@ -1,45 +1,33 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CarFactory.Domain.CarDomain;
+using CarFactory.Generics.Infrastructure;
 using DB.EFRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace DB.Infrastructure.EFRepository.Repositories
 {
-    public class CarRepository : ICarRepository
+    public class CarRepository : BaseRepository<int, Car>, ICarRepository
     {
         private readonly CarFactoryContext _context;
 
-        public CarRepository(CarFactoryContext carFactoryContext)
+        public CarRepository(CarFactoryContext context) : base(context)
         {
-            _context = carFactoryContext;
+            _context = context;
         }
 
-        public void Create(Car entity)
-        {
-            _context.Cars.Add(entity);
-            Save();
-        }
+        //public bool Exist(string model)
+        //{
+        //    return true;
+        //    //return _context.Cars.Any(x => x.Model == model);
+        //}
 
-        public bool Exist(string model)
-        {
-            return _context.Cars.Any(x => x.Model == model);
-        }
 
-        public Car Get(int id)
-        {
-            return _context.Cars.Include(x => x.CarType).FirstOrDefault(x => x.Id == id);
-        }
-
-        public List<Car> GetAll()
+        public List<Car> GetActiveCars()
         {
             return _context.Cars.Include(x => x.CarType).Where(x => !x.IsDeleted).ToList();
         }
 
-        public void Save()
-        {
-            _context.SaveChanges();
-        }
 
     }
 }

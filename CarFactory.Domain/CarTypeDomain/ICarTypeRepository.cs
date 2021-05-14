@@ -3,7 +3,6 @@
 namespace CarFactory.Domain.CarTypeDomain
 {
     public interface ICarTypeRepository : IRepository<int, CarType>
-    {
-
+    {        
     }
 }
