@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace CarFactory.Generics.Infrastructure
@@ -21,9 +22,9 @@ namespace CarFactory.Generics.Infrastructure
             Save();
         }
 
-        public bool Exist(string model)
+        public bool Exist(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().Any(expression);
         }
 
         public T Get(TKey id)

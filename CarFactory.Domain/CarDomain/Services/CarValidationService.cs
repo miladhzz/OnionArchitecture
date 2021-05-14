@@ -13,7 +13,7 @@ namespace CarFactory.Domain.CarDomain.Services
 
         public void CheckCarModelIsExist(string model)
         {
-            if (_carRepository.Exist(model))
+            if (_carRepository.Exist(x => x.Model == model))
                 throw new DuplicateCarException("Model is exists");
         }
     }

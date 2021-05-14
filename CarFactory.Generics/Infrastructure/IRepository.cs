@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace CarFactory.Generics.Infrastructure
@@ -10,6 +11,6 @@ namespace CarFactory.Generics.Infrastructure
         List<T> GetAll();
         T Get(TKey id);
         void Save();
-        bool Exist(string model);
+        bool Exist(Expression<Func<T, bool>> expression);
     }
 }

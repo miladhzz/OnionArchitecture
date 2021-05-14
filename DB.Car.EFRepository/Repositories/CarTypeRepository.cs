@@ -3,6 +3,7 @@ using DB.EFRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace DB.Infrastructure.EFRepository.Repositories
 {
@@ -21,9 +22,9 @@ namespace DB.Infrastructure.EFRepository.Repositories
             Save();
         }
 
-        public bool Exist(string name)
+        public bool Exist(Expression<Func<CarType, bool>> expression)
         {
-            return _context.CarTypes.Any(x => x.Name == name);
+            throw new NotImplementedException();
         }
 
         public CarType Get(int id)
