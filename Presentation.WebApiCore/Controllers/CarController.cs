@@ -22,7 +22,7 @@ namespace Presentation.WebApiCore.Controllers
         [HttpGet]
         public CarViewModel Get([FromQuery] int id)
         {
-            return _carApplication.Get(id);
+            return _carApplication.CarInfo(id);
         }
 
         [HttpPost]

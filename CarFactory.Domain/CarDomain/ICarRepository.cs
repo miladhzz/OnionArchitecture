@@ -6,5 +6,6 @@ namespace CarFactory.Domain.CarDomain
     public interface ICarRepository : IRepository<int , Car>
     {
         List<Car> GetActiveCars();
+        Car CarInfo(int id);
     }
 }

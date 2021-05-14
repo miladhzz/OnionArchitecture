@@ -25,15 +25,9 @@ namespace CF.Application
             _carRepository.Save();
         }
 
-        public void Create(CreateCar command)
+        public CarViewModel CarInfo(int id)
         {
-            var newCar = new Car(command.Model, command.CarTypeId, _carValidationService);
-            _carRepository.Create(newCar);            
-        }
-
-        public CarViewModel Get(int id)
-        {
-            var car = _carRepository.Get(id);
+            var car = _carRepository.CarInfo(id);
             return new CarViewModel()
             {
                 Id = car.Id,
@@ -42,6 +36,17 @@ namespace CF.Application
                 IsDelete = car.IsDeleted,
                 CarType = car.CarType.Name
             };
+        }
+
+        public void Create(CreateCar command)
+        {
+            var newCar = new Car(command.Model, command.CarTypeId, _carValidationService);
+            _carRepository.Create(newCar);            
+        }
+
+        public Car Get(int id)
+        {
+            return _carRepository.Get(id);
         }
 
         public List<CarViewModel> GetAll()
@@ -70,6 +75,18 @@ namespace CF.Application
             var car = _carRepository.Get(command.Id);
             car.Rename(command.Model);
             _carRepository.Save();
+        }
+
+        CarViewModel ICarApplication.Get(int id)
+        {
+            var car = _carRepository.CarInfo(id);
+            return new CarViewModel()
+            {
+                Id = car.Id,
+                Model = car.Model,
+                CreateTime = car.CreateTime.ToString(CultureInfo.InvariantCulture),
+                IsDelete = car.IsDeleted,
+            };
         }
     }
 }

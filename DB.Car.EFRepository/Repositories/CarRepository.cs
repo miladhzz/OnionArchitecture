@@ -16,6 +16,11 @@ namespace DB.Infrastructure.EFRepository.Repositories
             _context = context;
         }
 
+        public Car CarInfo(int id)
+        {
+            return _context.Cars.Include(x => x.CarType).FirstOrDefault(x => x.Id == id);
+        }
+
         //public bool Exist(string model)
         //{
         //    return true;
@@ -28,6 +33,7 @@ namespace DB.Infrastructure.EFRepository.Repositories
             return _context.Cars.Include(x => x.CarType).Where(x => !x.IsDeleted).ToList();
         }
 
+        
 
     }
 }
