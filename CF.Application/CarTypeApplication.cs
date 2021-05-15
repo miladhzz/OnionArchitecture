@@ -48,7 +48,7 @@ namespace CF.Application
 
         public List<CarTypeViewModel> GetAll()
         {
-            var carTypes = _carTypeRepository.GetAll();
+            var carTypes = _carTypeRepository.GetActiveCarTypes();
             return (from carType in carTypes
                     select new CarTypeViewModel()
                     {

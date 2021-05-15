@@ -1,4 +1,5 @@
 ﻿using CarFactory.Domain.CarTypeDomain;
+using CarFactory.Generics.Infrastructure;
 using DB.EFRepository;
 using System;
 using System.Collections.Generic;
@@ -7,39 +8,25 @@ using System.Linq.Expressions;
 
 namespace DB.Infrastructure.EFRepository.Repositories
 {
-    public class CarTypeRepository : ICarTypeRepository
+    public class CarTypeRepository : BaseRepository<int, CarType>, ICarTypeRepository
     {
         private readonly CarFactoryContext _context;
 
-        public CarTypeRepository(CarFactoryContext context)
+        public CarTypeRepository(CarFactoryContext context) : base(context)
         {
             _context = context;
         }
 
-        public void Create(CarType entity)
-        {
-            _context.CarTypes.Add(entity);
-            Save();
-        }
 
-        public bool Exist(Expression<Func<CarType, bool>> expression)
-        {
-            throw new NotImplementedException();
-        }
+        //public bool Exist(Expression<Func<CarType, bool>> expression)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public CarType Get(int id)
-        {
-            return _context.CarTypes.FirstOrDefault(x => x.Id == id);
-        }
 
-        public List<CarType> GetAll()
+        public List<CarType> GetActiveCarTypes()
         {
             return _context.CarTypes.Where(x => !x.IsDeleted).ToList();
-        }
-
-        public void Save()
-        {
-            _context.SaveChanges();
         }
     }
 }
